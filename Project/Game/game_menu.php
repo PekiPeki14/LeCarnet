@@ -19,12 +19,19 @@
                 $playerCaseName = $player->name;
                 $playerIsEmpty = "false";
             }
-            echo "<div class='gameButton' onclick='showPopup(".$player->id.",".$playerIsEmpty.")' id='socle'".$player->id.">";
+            echo "<div class='gameButton' onclick='showPopup(".json_encode($player).",".$playerIsEmpty.")' id='socle'".$player->id.">";
                 echo "<p>".$playerCaseName."</p>";
             echo "</div>";
         }
         ?>
     </div>
-    <div class="popupInfo" id="popup"></div>
+    <div class="popupInfo" id="popup">
+        <h1 id="popupInfoTitle"></h1>
+        <p id="popupInfoSubTitle"></h1>
+        <div class="buttonGroup">
+            <button id="playButton">JOUER</button>
+            <button id="deleteButton">Supprimer la partie</button>
+        </div>
+    </div>
 </body>
 </html>
