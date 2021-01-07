@@ -10,12 +10,11 @@ function setFullScreen(){
 }
 
 function showPopup(player,isEmpty){
-    console.log(player,isEmpty);
+    //console.log(player,isEmpty);
     var popup = document.getElementById("popup");
     var popupTitle = document.getElementById("popupInfoTitle");
     var popupSubTitle = document.getElementById("popupInfoSubTitle");
-    var popupButtonPlay= document.getElementById("playButton");
-    var popupButtonDelete = document.getElementById("deleteButton");
+    var buttonGroup = document.getElementById("popupButtonGroup");
 
     var titleText = "Nouvelle Partie";
     var subTitle = "";
@@ -31,15 +30,26 @@ function showPopup(player,isEmpty){
     popupTitle.innerHTML = titleText;
     popupSubTitle.innerHTML = subTitle;
 
-    //TODO - REUSSIR A SUPPRIMER LES EVENTS LISTENER
-    popupButtonPlay.removeEventListener("click", play);
-    popupButtonDelete.removeEventListener("click", deleteGame)
+    let children = Array.from(buttonGroup.children);
+    for (let index = 0; index < children.length; index++) {
+        const child = children[index];
+        buttonGroup.removeChild(child)
+    }
 
+    var popupButtonPlay= document.createElement("button");
+    popupButtonPlay.id = "playButton";
+    popupButtonPlay.innerHTML = "JOUER"
     popupButtonPlay.addEventListener('click', function(){
-        play(player_id,current_scene)}, false);
+    play(player_id,current_scene)}, false);
 
+    var popupButtonDelete = document.createElement("button");
+    popupButtonDelete.id = "deleteButton"
+    popupButtonDelete.innerHTML = "Supprimer la partie"
     popupButtonDelete.addEventListener('click', function(){
-        deleteGame(player_id)}, false);
+    deleteGame(player_id)}, false);
+
+    buttonGroup.appendChild(popupButtonPlay)
+    buttonGroup.appendChild(popupButtonDelete)
 }
 
 function play(player_id,current_scene){

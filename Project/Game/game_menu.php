@@ -28,9 +28,7 @@
     <div class="popupInfo" id="popup">
         <h1 id="popupInfoTitle"></h1>
         <p id="popupInfoSubTitle"></h1>
-        <div class="buttonGroup">
-            <button id="playButton">JOUER</button>
-            <button id="deleteButton">Supprimer la partie</button>
+        <div class="buttonGroup" id="popupButtonGroup">
         </div>
     </div>
 </body>
