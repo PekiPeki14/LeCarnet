@@ -1,7 +1,7 @@
 <?php include "../Shared/head.php" ?>
 <?php include "../Ressources/Const/const_infos.php" ?>
 <?php include "Informations/Scene.php" ?>
-<?php $scene = new Scene(); ?>
+<?php $scene = new Scene(23); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,5 +1,7 @@
 <?php include "../Shared/head.php" ?>
 <?php include "../Ressources/Const/const_infos.php" ?>
+<?php include "../Data/data_manipulation.php" ?>
+<?php $players = DataManipulation::getPlayers() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +11,19 @@
 <body>
     <h1> Selectionnez une partie </h1>
     <div id="select">
-        <div class="gameButton" id="socle1">Emplacement 1</div>
-        <div class="gameButton" id="socle2">Emplacement 2</div>
-        <div class="gameButton" id="socle3">Emplacement 3</div>
-        <div class="gameButton" id="socle4">Emplacement 4</div>
+        <?php
+        foreach ($players as $player) {
+            $playerCaseName = "Emplacement Vide";
+            $playerIsEmpty = "true";
+            if($player->name != null){
+                $playerCaseName = $player->name;
+                $playerIsEmpty = "false";
+            }
+            echo "<div class='gameButton' onclick='showPopup(".$player->id.",".$playerIsEmpty.")' id='socle'".$player->id.">";
+                echo "<p>".$playerCaseName."</p>";
+            echo "</div>";
+        }
+        ?>
     </div>
     <div class="popupInfo" id="popup"></div>
 </body>

@@ -1,0 +1,121 @@
+{
+    "Users": [
+      {
+        "name": null,
+        "scene_id": 2,
+        "historique": [],
+        "id": 1
+      },
+      {
+        "name": null,
+        "scene_id": 0,
+        "historique": [],
+        "id": 2
+      },
+      {
+        "name": null,
+        "scene_id": 0,
+        "historique": [],
+        "id": 3
+      },
+      {
+        "name": null,
+        "scene_id": 1,
+        "historique": [],
+        "id": 4
+      }
+    ],
+    "Stories":[
+        {
+            "story_id": 1,
+            "story_name":"Le carnet"
+        }
+    ],
+    "Scenes": [
+      {
+        "id": 0,
+        "id_story": 1,
+        "name": "La déchéance",
+        "contexte": "Vous n'avez pas pris le carnet",
+        "scenario": [
+          {
+            "1": "Vous n'avez pas pris le carnet"
+          }
+        ],
+        "choices": [
+          {
+            "label": null,
+            "scenarioId": null
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "id_story": 1,
+        "name": "Le Vol",
+        "contexte": "Debut de soirée, dans le sous sol d'un immeuble",
+        "scenario": [
+          {
+            "1": "Il est 19h47, un homme est adossé a un mur et attend quelque chose, mais quoi ?",
+            "2": "Il a l'air stressé, comme si quelque chose le traquassait fortement",
+            "3": "Une jeune femme sort de l'oscurité du sous sol, passe devant le jeune homme",
+            "4": "Femme : Bonsoir",
+            "5": "L'homme ne répond pas, mais observe la femme une fois passée devant lui, et remarque qu'elle porte un sac a main de luxe",
+            "6": "Il se met alors a marcher rapidement en direction de la femme, puis lui arrache son sac violemment",
+            "7": "La femme hurle de peur et de surprise, tandis qu'il part en courrant avec son butin",
+            "8": "Plus loin, hors de l'immeuble, dans une petite ruelle, l'homme vide le sac sur le sol",
+            "9": "Montre, Porte Feuilles, Boucles d'oreilles en or, il prend tout",
+            "10": "Mais son regard est attiré par un objet en particulier",
+            "11": "Un vieux carnet de note décoré de feuilles d'or, dont une petite chaine en or dépasse"
+          }
+        ],
+        "choices": [
+          {
+            "label": "Prendre le carnet",
+            "scenarioId": 2
+          },
+          {
+            "label": "Ne pas prendre le carnet",
+            "scenarioId": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "id_story": 1,
+        "name": "Exemple",
+        "contexte": "",
+        "scenario": [],
+        "choices": [
+          {
+            "label": "Choice_1",
+            "scenarioId": 0
+          },
+          {
+            "label": "Choice_2",
+            "scenarioId": 0
+          },
+          {
+            "label": "Choice_3",
+            "scenarioId": 0
+          }
+        ]
+      }
+    ],
+    "Objects": [
+      {
+        "id": 0,
+        "nom": "Exemple",
+        "description": "Put-Here-A-Desc",
+        "image-link": "Put-Here-An-Image-Link"
+      }
+    ],
+    "NecessaryActions": [
+      {
+        "id": 0,
+        "nom": "Exemple",
+        "description": "Put-Here-A-Desc",
+        "Scene_impact": []
+      }
+    ]
+  }

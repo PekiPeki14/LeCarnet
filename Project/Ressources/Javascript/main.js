@@ -8,3 +8,7 @@ function setFullScreen(){
         container.msRequestFullscreen();
     }
 }
+
+function showPopup(playerId,isEmpty){
+    console.log(playerId,isEmpty);
+}
