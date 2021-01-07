@@ -10,11 +10,14 @@ function setFullScreen(){
 }
 
 function showPopup(player,isEmpty){
-    //console.log(player,isEmpty);
     var popup = document.getElementById("popup");
     var popupTitle = document.getElementById("popupInfoTitle");
     var popupSubTitle = document.getElementById("popupInfoSubTitle");
     var buttonGroup = document.getElementById("popupButtonGroup");
+    var overlay = document.getElementById("overlay");
+
+    popup.className = "";
+    overlay.className = "";
 
     var titleText = "Nouvelle Partie";
     var subTitle = "";
@@ -50,8 +53,15 @@ function showPopup(player,isEmpty){
 
     buttonGroup.appendChild(popupButtonPlay)
     buttonGroup.appendChild(popupButtonDelete)
-}
 
+    popup.className = "show";
+    overlay.className = 'show';
+
+}
+function closePopup(){
+    popup.className = "";
+    overlay.className = "";
+}
 function play(player_id,current_scene){
     alert("Information : Joueur = "+player_id+" Scene = "+current_scene);
 }

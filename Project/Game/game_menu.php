@@ -25,11 +25,12 @@
         }
         ?>
     </div>
-    <div class="popupInfo" id="popup">
+    <div data-pop="slide-down" class="popupInfo" id="popup">
         <h1 id="popupInfoTitle"></h1>
         <p id="popupInfoSubTitle"></h1>
         <div class="buttonGroup" id="popupButtonGroup">
         </div>
     </div>
+    <div id="overlay" onclick="closePopup()"></div>
 </body>
 </html>
