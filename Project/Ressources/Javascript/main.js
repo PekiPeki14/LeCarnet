@@ -24,10 +24,20 @@ function showPopup(player,isEmpty){
     var current_scene = 1;
     var player_id = player.id;
 
-    if(!isEmpty){
+    if(isEmpty){
         titleText = player.current_scene;
         subTitle = player.current_scene;
         current_scene = player.current_scene;
+        jQuery.ajax({
+            type: "GET",
+            url: '../Game/Controller/game_controller.php',
+            dataType: 'json',
+            data: {functionName: 'getSceneInfo', arguments: player.current_scene},
+        
+            success: function (response) {
+                console.log(response)
+            }
+        });
     }
 
     popupTitle.innerHTML = titleText;
