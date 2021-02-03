@@ -10,6 +10,7 @@ function setFullScreen(){
 }
 
 function showPopup(player,isEmpty){
+
     var popup = document.getElementById("popup");
     var popupTitle = document.getElementById("popupInfoTitle");
     var popupSubTitle = document.getElementById("popupInfoSubTitle");
@@ -19,29 +20,26 @@ function showPopup(player,isEmpty){
     popup.className = "";
     overlay.className = "";
 
-    var titleText = "Nouvelle Partie";
-    var subTitle = "";
-    var current_scene = 1;
+    var current_scene = 0;
     var player_id = player.id;
 
-    if(isEmpty){
-        titleText = player.current_scene;
-        subTitle = player.current_scene;
-        current_scene = player.current_scene;
+    if(!isEmpty){
+        current_scene = player.current_scene_id;
         jQuery.ajax({
             type: "GET",
             url: '../Game/Controller/game_controller.php',
             dataType: 'json',
-            data: {functionName: 'getSceneInfo', arguments: player.current_scene},
+            data: {functionName: 'getSceneInfo', arguments: player.current_scene_id},
         
             success: function (response) {
-                console.log(response)
+                popupTitle.innerHTML = response.scene_name;
+                popupSubTitle.innerHTML = response.context;
             }
         });
+    }else{
+        popupTitle.innerHTML = "Nouvelle Partie";
+        popupSubTitle.innerHTML = "";
     }
-
-    popupTitle.innerHTML = titleText;
-    popupSubTitle.innerHTML = subTitle;
 
     let children = Array.from(buttonGroup.children);
     for (let index = 0; index < children.length; index++) {
@@ -73,7 +71,15 @@ function closePopup(){
     overlay.className = "";
 }
 function play(player_id,current_scene){
-    alert("Information : Joueur = "+player_id+" Scene = "+current_scene);
+    jQuery.ajax({
+        type: "GET",
+        url: '../Game/Controller/game_controller.php',
+        dataType: 'json',
+        data: {functionName: 'launchGame', arguments: {player_id : player_id, scene_id : current_scene}},
+    
+        success: function (response) {
+        }
+    });
 }
 
 function deleteGame(player_id){

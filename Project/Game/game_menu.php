@@ -1,6 +1,7 @@
-<?php include "../Shared/head.php" ?>
-<?php include "../Ressources/Const/const_infos.php" ?>
-<?php include "../Data/data_manipulation.php" ?>
+<?php require_once $_SERVER["DOCUMENT_ROOT"]."/Shared/head.php" ?>
+<?php require_once $_SERVER["DOCUMENT_ROOT"]."/Ressources/Const/const_infos.php" ?>
+<?php require_once $_SERVER["DOCUMENT_ROOT"]."/Data/data_manipulation.php" ?>
+
 <?php $players = DataManipulation::getPlayers() ?>
 
 <!DOCTYPE html>

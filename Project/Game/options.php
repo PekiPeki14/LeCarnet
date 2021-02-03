@@ -1,5 +1,5 @@
-<?php include "../Shared/head.php" ?>
-<?php include "../Ressources/Const/const_infos.php" ?>
+<?php include $_SERVER["DOCUMENT_ROOT"]."/Shared/head.php" ?>
+<?php include $_SERVER["DOCUMENT_ROOT"]."/Ressources/Const/const_infos.php" ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
