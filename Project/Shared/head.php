@@ -7,3 +7,4 @@
         <link rel="stylesheet" href="../Ressources/Css/style.css">
     </head>
 </html>
+<?php session_start(); ?>

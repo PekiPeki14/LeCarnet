@@ -26,7 +26,6 @@ class DataManipulation{
                 return $scene;
             }
         }
-        //return $scene;
     }
 
     private static function decodeJson(){

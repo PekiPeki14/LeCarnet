@@ -30,7 +30,15 @@ function get_scene_info(int $scene_id){
 }
 
 function launch(int $player_id, int $scene_id){
+    session_start();
+
     $_SESSION['player_id'] = $player_id;
     $_SESSION['scene_id'] = $scene_id;
+
+    if(isset($_SESSION['player_id']) && isset($_SESSION['scene_id'])){
+        echo json_encode("OK");
+    }else{
+        echo json_encode("Fail");
+    }
 }
 ?>

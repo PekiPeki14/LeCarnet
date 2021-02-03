@@ -78,6 +78,9 @@ function play(player_id,current_scene){
         data: {functionName: 'launchGame', arguments: {player_id : player_id, scene_id : current_scene}},
     
         success: function (response) {
+            if(response == "OK"){
+                window.location = "/Game/game.php";
+            }
         }
     });
 }
